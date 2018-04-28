@@ -24,27 +24,24 @@ source ${build_pack_dir}/lib/build.sh
 
 
 head "Loading configuration and environment"
-load_previous_npm_node_versions
+# load_previous_npm_node_versions
 load_config
 export_config_vars
 export_mix_env
 
-cached_node=$cache_dir/node-v$node_version-linux-x64.tar.gz
+# cached_node=$cache_dir/node-v$node_version-linux-x64.tar.gz
 
-head "Installing binaries"
-cleanup_cache
-download_node
-install_node
-install_npm
-if [ -f "$assets_dir/yarn.lock" ]; then
-  install_yarn "$heroku_dir/yarn"
-fi
-
-head "Building dependencies"
-install_and_cache_deps
+# head "Installing binaries"
+# cleanup_cache
+# download_node
+# install_node
+# install_npm
+# if [ -f "$assets_dir/yarn.lock" ]; then
+#   install_yarn "$heroku_dir/yarn"
+# fi
 
 compile
 
-head "Finalizing build"
-cache_versions
-finalize_node
+# head "Finalizing build"
+# cache_versions
+# finalize_node
